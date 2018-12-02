@@ -15,9 +15,6 @@ import org.isisaddons.module.sessionlogger.SessionLoggerModule;
 import org.isisaddons.module.togglz.TogglzModule;
 import org.isisaddons.wicket.excel.cpt.ui.ExcelUiModule;
 import org.isisaddons.wicket.fullcalendar2.cpt.ui.FullCalendar2UiModule;
-import org.isisaddons.wicket.gmap3.cpt.applib.Gmap3ApplibModule;
-import org.isisaddons.wicket.gmap3.cpt.service.Gmap3ServiceModule;
-import org.isisaddons.wicket.gmap3.cpt.ui.Gmap3UiModule;
 import org.isisaddons.wicket.pdfjs.cpt.PdfjsCptModule;
 import org.isisaddons.wicket.summernote.cpt.ui.SummernoteUiModule;
 import org.isisaddons.wicket.wickedcharts.cpt.ui.WickedChartsUiModule;
@@ -55,9 +52,6 @@ public class DomainAppAppManifest extends AppManifestAbstract2 {
                 // cpt (wicket ui)
                 ExcelUiModule.class,
                 FullCalendar2UiModule.class,
-                Gmap3ApplibModule.class,
-                Gmap3ServiceModule.class,
-                Gmap3UiModule.class,
                 SummernoteUiModule.class,
                 PdfjsCptModule.class,
                 WickedChartsUiModule.class

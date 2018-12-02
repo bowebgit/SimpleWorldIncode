@@ -18,6 +18,9 @@ import org.incode.example.settings.dom.jdo.ApplicationSettingJdo;
 @DomainService(nature = NatureOfService.DOMAIN)
 public class FeatureStateRepositoryForApplicationSettings implements FeatureStateRepository {
 
+    @Inject
+    ApplicationSettingsServiceRW applicationSettingsService;
+	
     static class FeatureStateForApplicationSetting implements FeatureState {
 
         static FeatureState from(final ApplicationSetting applicationSetting) {
@@ -53,9 +56,6 @@ public class FeatureStateRepositoryForApplicationSettings implements FeatureStat
         final ApplicationSetting applicationSetting = applicationSettingsService.newString(key, "", "");
         return FeatureStateForApplicationSetting.from(applicationSetting);
     }
-
-    @Inject
-    ApplicationSettingsServiceRW applicationSettingsService;
 
 }
 

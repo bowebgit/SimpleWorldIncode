@@ -19,10 +19,12 @@ public class SimpleModule extends ModuleAbstract {
         return Sets.newHashSet(new BaseModule());
     }
 
-    public static class PropertyDomainEvent<S,T>
-            extends org.apache.isis.applib.services.eventbus.PropertyDomainEvent<S,T> {}
-    public static class CollectionDomainEvent<S,T>
-            extends org.apache.isis.applib.services.eventbus.CollectionDomainEvent<S,T> {}
-    public static class ActionDomainEvent<S> extends
-            org.apache.isis.applib.services.eventbus.ActionDomainEvent<S> {}
+    @SuppressWarnings("serial")
+	public static class PropertyDomainEvent<S,T> extends org.apache.isis.applib.services.eventbus.PropertyDomainEvent<S,T> {}
+    
+    @SuppressWarnings("serial")
+	public static class CollectionDomainEvent<S,T> extends org.apache.isis.applib.services.eventbus.CollectionDomainEvent<S,T> {}
+    
+    @SuppressWarnings("serial")
+	public static class ActionDomainEvent<S> extends org.apache.isis.applib.services.eventbus.ActionDomainEvent<S> {}
 }
