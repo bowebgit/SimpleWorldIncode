@@ -19,10 +19,6 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class SimpleObject_createUpTo10 extends FixtureScript {
 
-    @javax.inject.Inject
-    SimpleObjectMenu simpleObjectMenu;
-
-	
     /**
      * The number of objects to create, up to 10; optional, defaults to 3.
      */
@@ -42,7 +38,7 @@ public class SimpleObject_createUpTo10 extends FixtureScript {
         int max = SimpleObject_data.values().length;
 
         // defaults
-        final int number = defaultParam("number", ec, 10);
+        final int number = defaultParam("number", ec, 3);
 
         // validate
         if(number < 0 || number > max) {
@@ -57,5 +53,8 @@ public class SimpleObject_createUpTo10 extends FixtureScript {
             simpleObjects.add(simpleObject);
         }
     }
+
+    @javax.inject.Inject
+    SimpleObjectMenu simpleObjectMenu;
 
 }

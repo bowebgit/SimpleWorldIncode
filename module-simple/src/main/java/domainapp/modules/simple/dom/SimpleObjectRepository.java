@@ -8,23 +8,22 @@ import org.apache.isis.applib.query.QueryDefault;
 import org.apache.isis.applib.services.registry.ServiceRegistry2;
 import org.apache.isis.applib.services.repository.RepositoryService;
 
-
-@DomainService(nature = NatureOfService.DOMAIN, repositoryFor = SimpleObject.class)
+@DomainService(
+        nature = NatureOfService.DOMAIN,
+        repositoryFor = SimpleObject.class
+)
 public class SimpleObjectRepository {
 
-    @javax.inject.Inject
-    RepositoryService repositoryService;
-    
-    @javax.inject.Inject
-    ServiceRegistry2 serviceRegistry;
-	
-	
     public List<SimpleObject> listAll() {
         return repositoryService.allInstances(SimpleObject.class);
     }
 
     public List<SimpleObject> findByName(final String name) {
-        return repositoryService.allMatches(new QueryDefault<>(SimpleObject.class,"findByName","name", name));
+        return repositoryService.allMatches(
+                new QueryDefault<>(
+                        SimpleObject.class,
+                        "findByName",
+                        "name", name));
     }
 
     public SimpleObject create(final String name) {
@@ -34,4 +33,8 @@ public class SimpleObjectRepository {
         return object;
     }
 
+    @javax.inject.Inject
+    RepositoryService repositoryService;
+    @javax.inject.Inject
+    ServiceRegistry2 serviceRegistry;
 }

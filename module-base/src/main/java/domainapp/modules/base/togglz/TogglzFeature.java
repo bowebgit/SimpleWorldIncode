@@ -1,11 +1,10 @@
 package domainapp.modules.base.togglz;
 
-import org.togglz.core.Feature;
 import org.togglz.core.annotation.EnabledByDefault;
 import org.togglz.core.annotation.Label;
 import org.togglz.core.context.FeatureContext;
 
-public enum TogglzFeature implements Feature {
+public enum TogglzFeature implements org.togglz.core.Feature {
 
     @Label("Enable SimpleObject#create")
     @EnabledByDefault
